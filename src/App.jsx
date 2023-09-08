@@ -1,8 +1,12 @@
 import { useState } from "react";
+import data from './data.js';
 
 const App = () => {
 
   const [count, setCount] = useState(1);
+  const [text, setText] = useState([]);
+
+  console.log(text);
 
   return (
     <section className="section-center">
