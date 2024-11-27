@@ -2,6 +2,7 @@
 
 import data from "@/data";
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 function LoremIpsumGenerator() {
     const [count, setCount] = useState(1);
@@ -17,7 +18,6 @@ function LoremIpsumGenerator() {
                     setText(data.slice(0, count));
                 }}
             >
-                {/* <div> */}
                 <label htmlFor="amount">paragraphs:</label>
                 <input
                     type="number"
@@ -29,7 +29,6 @@ function LoremIpsumGenerator() {
                     max={8}
                     onChange={(e) => setCount(parseInt(e.target.value))}
                 />
-                {/* </div> */}
                 <button className="btn" type="submit">
                     generate
                 </button>
@@ -48,8 +47,9 @@ function LoremIpsumGenerator() {
                     </div>
                 )}
                 {text.length > 0 &&
-                    text.map((p, index) => {
-                        return <p key={index}>{p}</p>;
+                    text.map((p) => {
+                        const id = uuidv4();
+                        return <p key={id}>{p}</p>;
                     })}
             </article>
         </section>
