@@ -1,7 +1,5 @@
+import LoremIpsumGenerator from "@/components/LoremIpsumGenerator";
+
 export default function Home() {
-    return (
-        <div>
-            <h1>Lorem Ipsum Generator</h1>
-        </div>
-    );
+    return <LoremIpsumGenerator />;
 }
